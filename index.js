@@ -16,3 +16,7 @@ console.log(person.name)
 let selecte=["red","blue"]
 selecte[2]='green'
 console.log(selecte)
+function greet(name){
+    console.log('Hello'+ name);
+}
+greet("john")
