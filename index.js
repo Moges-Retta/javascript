@@ -1,5 +1,8 @@
+const prompt= require("prompt-sync")(); // required if code contains user input
+let name=prompt("username")
+console.log(name)
 console.log('Hello world'); // This is my first JS code
-let name='Mosh';
+ name='Mosh';
 console.log(name);
 let firstName='Mosh';
 let interestRate = 0.3;

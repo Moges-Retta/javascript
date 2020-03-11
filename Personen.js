@@ -14,21 +14,23 @@ function naamLengte(naam){
 NamenEnLengte=naamLengte(prompt("geef naam: "));
 
 function watIsMin(NamenEnLengte){
-return NamenEnLengte.map(lengte=>lengte.Lengten).reduce((klien,getal)=>{if(klien<getal) return klien; return getal;})
+return NamenEnLengte.map(lengte=>lengte.Lengten)
+.reduce((klien,getal)=>{if(klien<getal) return klien; return getal;})
 }
 
 function watIsMax(NamenEnLengte){
-return NamenEnLengte.map(lengte=>lengte.Lengten).reduce((grootste,getal)=>{if(grootste>getal) return grootste; return getal;})
+return NamenEnLengte.map(lengte=>lengte.Lengten)
+.reduce((grootste,getal)=>{if(grootste>getal) return grootste; return getal;})
 }
 
 
 console.log("Wat is min: ",watIsMin(NamenEnLengte))
 console.log("wat is max: ",watIsMax(NamenEnLengte))
 
-NamenEnLengte.filter(len=>len.Lengten===watIsMin(NamenEnLengte))
-.forEach(len=>console.log(`Kleinste persoon is : ${len.Naamen}:${len.Lengten}`))
-NamenEnLengte.filter(len=>len.Lengten===watIsMax(NamenEnLengte))
-.forEach(len=>console.log(`Grootste persoon is : ${len.Naamen}:${len.Lengten}`))
+NamenEnLengte.filter(persoon=>persoon.Lengten===watIsMin(NamenEnLengte))
+.forEach(persoon=>console.log(`Kleinste persoon is : ${persoon.Naamen}:${persoon.Lengten}`))
+NamenEnLengte.filter(persoon=>persoon.Lengten===watIsMax(NamenEnLengte))
+.forEach(persoon=>console.log(`Grootste persoon is : ${persoon.Naamen}:${persoon.Lengten}`))
 
 
 /*console.log(NamenEnLengte.reduce(
