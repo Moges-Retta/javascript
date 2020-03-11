@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
   "name": "oefening",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+=======
+  "name": "javascriptbestanden",
+  "version": "1.0.0",
+  "description": "",
+  "main": "copyright.js",
+>>>>>>> 9fb905efdd4eb1bf9cc4dbd2bbf6ee7410507131
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
