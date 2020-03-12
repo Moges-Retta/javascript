@@ -33,6 +33,9 @@ NamenEnLengte.filter(persoon=>persoon.Lengten===watIsMax(NamenEnLengte))
 .forEach(persoon=>console.log(`Grootste persoon is : ${persoon.Naamen}:${persoon.Lengten}`))
 
 
+
+
+
 /*console.log(NamenEnLengte.reduce(
     (kleinste, getal)=> {if (kleinste < getal) return kleinste; return getal;}));*/
 
