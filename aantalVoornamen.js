@@ -5,22 +5,25 @@ document.getElementById("Versturen").onclick=function(){
     const li = document.createElement("li");
     li.dataset.value="1";
     const nieuweNaam=document.getElementById("naam").value;
-    // eerste element van array
+    // eerste element van naamArray
     if(i===0){
         arrayInvullen(naamArray,nieuweNaam)
-    } else{   
-        
+    } else{   //voeg de rest elementen van naamArray toe
+        let teller=0;
         for ( const naam of naamArray) {
-            console.log(naamArray)
             console.log(naam)
-            console.log(naam.localeCompare(nieuweNaam))
-            console.log(naamArray)
-            if(naam.localeCompare(nieuweNaam)!==0){// 0: gelijk
-                arrayInvullen(naamArray, nieuweNaam);
-            } else {
-                naamCount(naam)
-            }
-        };
+            console.log(nieuweNaam)
+            if(naam!=null && nieuweNaam!=null){
+                if(naam.localeCompare(nieuweNaam)!==0){// 0: gelijk
+                    teller+=1;                
+                } 
+            };
+        }
+        if(teller===naamArray.length){//nieuweNaam is uniek
+            arrayInvullen(naamArray, nieuweNaam);
+        }else {
+            naamCount(nieuweNaam)
+        }
     }
     
     
@@ -42,17 +45,16 @@ function arrayInvullen(naamArray,nieuweNaam){
             
             td.appendChild(li)
             td2.innerText=li.dataset.value;
-
+            td2.id=nieuweNaam;
             li.innerText=nieuweNaam;
             naamArray[i]=nieuweNaam;
 }
+/*
 function naamVergelijk(naam1,naam2){
     let count=0;
     let gelijk;
     if(naam1.length===naam2.length){
         for (let volgNummer=0;volgNummer!==naam1.length;volgNummer++){
-            //console.log(volgNummer)
-            //console.log(naam2[volgNummer])
             if(naam1[volgNummer]===naam2[volgNummer]){
                 count+=1;
             }
@@ -66,17 +68,8 @@ function naamVergelijk(naam1,naam2){
 
     return gelijk;
 }
-
+*/
 function naamCount(naam) {
-        for (const rij of document.querySelectorAll("tr")){
-            console.log(rij)
-            const lijst=rij.querySelector("li");
-            //console.log(lijst.dataset.name)
-            if(lijst.dataset.name.localeCompare(naam)===0){
-            lijst.dataset.value=parseInt((lijst.dataset.value), 10) + 1;
-            }
-            
-        }
-        
-    
+        const rij=document.getElementById(naam);
+        rij.innerText=parseInt((rij.innerText), 10) + 1;   
 }
