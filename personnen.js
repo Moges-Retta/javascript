@@ -10,4 +10,13 @@ document.getElementById("toevoegen").onclick = function () {
     voornaamInput.value = "";
     familienaamInput.value = "";
     voornaamInput.focus();
+    const verwijderTd = tr.insertCell();
+    const verwijderHyperlink = document.createElement("a"); 
+    verwijderHyperlink.innerText = "X"; 
+    verwijderHyperlink.href="#"; 
+    verwijderTd.appendChild(verwijderHyperlink);
+    verwijderHyperlink.onclick = function () {
+        const tr = this.parentElement.parentElement;
+        tr.remove();
+    };
     };
