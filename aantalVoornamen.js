@@ -40,7 +40,7 @@ function arrayInvullen(naamArray, nieuweNaam) {
     td.appendChild(li)
     td2.innerText = "1";
     td2.id = nieuweNaam;
-    li.innerText = nieuweNaam;
+    li.innerText = `${nieuweNaam}:`;
     naamArray.push(nieuweNaam);
 
 }
