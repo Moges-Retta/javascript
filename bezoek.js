@@ -8,10 +8,10 @@ if(aantalbezoek===null){
 
 localStorage.setItem("aantalBezoeken",aantalbezoek)
 
-const today= new Date();
-const date = today.getFullYear()+'-'+(today.getMonth())+'-'+today.getDate();
+const today= new Date().toLocaleString();
+//const date = today.getFullYear()+'-'+(today.getMonth())+'-'+today.getDate();
 
-localStorage.setItem("dateVisited", date);// last date van bezoek
+localStorage.setItem("dateVisited", today);// last date van bezoek
 
 const visitedRecords=localStorage.getItem("dateVisited");
 
